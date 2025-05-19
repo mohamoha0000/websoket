@@ -29,7 +29,7 @@ def handle_client(client_socket):
         request = client_socket.recv(1024).decode(errors='ignore')
         print("🔵 طلب وارد:\n", request.lower())
 
-        if "upgrade: websocket" in request.lower() or "cloudflare" in request.lower():
+        if "upgrade: websocket" in request.lower() or "websocke" in request.lower():
             # رد WebSocket
             client_socket.send(WS_HANDSHAKE_RESPONSE.encode())
             print("🟢 WebSocket Handshake تم بنجاح")
